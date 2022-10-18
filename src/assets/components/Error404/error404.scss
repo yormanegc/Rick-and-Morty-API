@@ -1,0 +1,12 @@
+.error404{
+    height: 100vh;
+    width: 100%;
+    @include centerDefault(flex,center,center);
+    text-align: center;
+}
+
+@media (max-width: $global-break){
+    .error404{
+        width: 92vw;
+    }
+}

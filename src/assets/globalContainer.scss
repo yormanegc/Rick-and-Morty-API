@@ -1,0 +1,11 @@
+.globalContainer{
+   width: 100%;
+   @include centerDefault(flex,center,center);
+   flex-direction: column;
+}
+
+@media (max-width: $global-break){
+   .globalContainer{
+      width: 98vw;
+   }
+}

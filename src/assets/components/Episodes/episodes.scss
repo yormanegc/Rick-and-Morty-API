@@ -1,0 +1,52 @@
+.episodes {
+  width: 98vw;
+  &__header{
+    width: 100%;
+    @include centerDefault(flex,center,center);
+    flex-direction: column;
+  }
+  &__container {
+    display: flex;
+    grid-template-columns: repeat(auto-fill, 300px);
+    flex-direction: column;
+    row-gap: 40px;
+    width: 100%;
+    @include centerDefault(flex,center,center);
+    margin-top: 50px;
+  }
+
+  &__cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    row-gap: 100px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+  }
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  @include centerDefault(flex, space-between, center);
+  @include globalPadding;
+
+  &__left {
+    &-link {
+      text-decoration: none;
+      color: $normal-color;
+      font-size: 2rem;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .episodes {
+    width: 100%;
+    &__cards {
+      @include centerDefault(flex, center, center);
+      flex-wrap: wrap;
+    }
+  }
+}

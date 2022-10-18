@@ -1,0 +1,24 @@
+.parameter{
+    height: 80px;
+    width: 100%;
+    margin: 20px 0 0 0;
+    font-size: 1.6rem;
+    @include centerDefault(flex,flex-start,center);
+    text-transform: uppercase;
+
+    &__green{
+        color: $second-color;
+    }
+    &__red{
+        color: red;
+    }
+    &__grey{
+        color: grey;
+    }
+}
+
+@media (max-width: $global-break){
+    .parameter{
+        width: 92vw;
+    }
+}

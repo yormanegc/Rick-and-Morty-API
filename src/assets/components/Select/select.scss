@@ -1,0 +1,49 @@
+.select{ 
+    position: relative;
+    &__button{
+        border: 2px solid $second-color;
+        cursor: pointer;
+        width: 250px;
+        height: 50px;
+        @include centerDefault(flex, space-between, center);
+        padding:16px;
+    }
+    &__option{
+        border: 2px solid $second-color;
+        background-color: $white-color;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 250px;
+        @include ghoster(0);
+        transform: translateY(-200%);
+        transition: 0.7s ease opacity;
+        cursor: pointer;
+        z-index: 2;
+
+        &-item{
+            height: 40px;
+            @include centerDefault(flex, center, center);
+        }
+
+        &-item:hover{
+            background-color: $second-color;
+        }
+    }
+    
+    &__option.active{
+        @include ghoster(100);
+        transform: translateY(0%);
+    }
+}
+
+.categoriesIcon{
+    height: 20px;
+    transition: 0.5s ease;
+    color: $second-color;
+}
+
+.categoriesIcon.active{
+    transform: rotate(180deg);
+    transition: 0.5s ease;
+}

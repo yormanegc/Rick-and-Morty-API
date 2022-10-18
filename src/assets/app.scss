@@ -1,0 +1,5 @@
+.app{
+    @include centerDefault(flex,center,center);
+    flex-direction: column;
+    width: 98vw;
+}

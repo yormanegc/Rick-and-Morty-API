@@ -1,0 +1,37 @@
+.location{
+    width: 98vw;
+    &__goback{
+        width: 100%;
+    }
+    &__details{
+        @include centerDefault(flex,center,center); 
+        margin-top: 20px;
+        flex-direction: column;
+    }
+
+    &__header{
+        @include centerDefault(flex,center,center);
+        flex-direction: column;
+    }
+
+    &__cards{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    row-gap: 100px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    }
+}
+
+@media (max-width: $global-break){
+    .location{
+        width: 96vw;
+        &__cards{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

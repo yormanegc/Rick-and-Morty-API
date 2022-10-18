@@ -1,0 +1,50 @@
+//Variables
+@import '/src/assets/variables/colors.scss';
+@import '/src/assets/variables/vglobales.scss';
+
+//Componentes
+@import '/src/assets/components/Card/card.scss';
+@import '/src/assets/components/Card/pagination.scss';
+@import '/src/assets/globalContainer.scss';
+@import '/src/assets/app.scss';
+@import './components/Navbar/navbar.scss';
+@import './components/Episodes/episodes.scss';
+@import './components/Search/search.scss';
+@import './components/Error404/error404.scss';
+@import './components/CharacterDetails/characterDetails.scss';
+@import './components/Parameter/parameter.scss';
+@import './components/Loader/loader.scss';
+@import './components/Filter/filter.scss';
+@import './components/Filter/Categories/categories.scss';
+@import './components/Select/select.scss';
+@import './components/Location/location.scss';
+@import './components/Footer/footer.scss';
+
+//Mixins
+@import '/src/assets/globalMixins.scss';
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: $white-color;
+    font-family: 'Roboto', sans-serif;
+    @include centerDefault(flex,center,center);
+}
+
+.link{
+    text-decoration: none;
+    color: initial;
+}
+
+@media (max-width:$global-break){
+   body{
+    width: 95vw;
+   }
+}

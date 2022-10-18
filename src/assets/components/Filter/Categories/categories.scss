@@ -1,0 +1,59 @@
+@mixin ghoster($value) {
+  opacity: $value;
+}
+.categories {
+  position: relative;
+  &__title {
+    cursor: pointer;
+    @include centerDefault(flex, center, center);
+    gap: 10px;
+    transition: 0.4s ease;
+  }
+
+  &__title.active {
+    color: $second-color;
+  }
+  &__fieldset {
+    border: 2px solid $second-color;
+    background-color: white;
+    border-radius: 10px;
+    top: 0;
+    position: absolute;
+    top: 30px;
+    left: -60px;
+    @include ghoster(0);
+    transform: translateY(-300%);
+    width: 200px;
+    @include centerDefault(flex, center, flex-start);
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    transition: 0.6s ease opacity;
+    z-index: 2;
+    box-shadow: 2px 9px 5px -3px rgba(0,0,0,0.41);
+    animation: colorChanger 1s infinite;
+  }
+
+  &__fieldset.active {
+    @include ghoster(100);
+    transform: translateY(0%);
+    
+  }
+}
+
+.categoriesIcon{
+   height: 12px;
+}
+
+
+@keyframes colorChanger {
+   0% {
+     border: 2px solid #5ccb5f;
+   }
+   50% {
+     border: 2px solid #98ff96;
+   }
+   100% {
+     border: 2px solid #43d441;
+   }
+ }

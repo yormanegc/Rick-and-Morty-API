@@ -1,0 +1,107 @@
+@mixin defaultButton {
+  height: 100px;
+  width: 100px;
+  border: 2px solid green;
+  background-color: transparent;
+  color: rgb(19, 37, 46);
+  cursor: pointer;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  list-style: none;
+  @include centerDefault(flex, center, center);
+}
+
+.pagination {
+ 
+  margin: 50px 0 50px 0;
+  &__container {
+    width: auto;
+    height: 100px;
+    @include centerDefault(flex, center, center);
+    gap: 10px;
+    &-button1 {
+      @include defaultButton;
+      position: relative;
+    }
+    &-button1::before {
+      content: "";
+      width: 96px;
+      height: 96px;
+      background-image: url("https://mystickermania.com/cdn/stickers/rick-and-morty/sticker_2060-512x512.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      animation: rotate 4s infinite;
+      position: absolute;
+      top: 0;
+      border-radius: 50%;
+      left: 0;
+      z-index: -2;
+    }
+
+    @keyframes rotate {
+      10% {
+        transform: rotate(360deg);
+      }
+    }
+    &-button1:hover {
+      box-shadow: 2px 1px 38px 18px $normal-color;
+      transition: 0.9s ease;
+    }
+
+    &-button2 {
+      @include defaultButton;
+      position: relative;
+    }
+
+    &-button2::before {
+      content: "";
+      width: 96px;
+      height: 96px;
+      background-image: url("https://mystickermania.com/cdn/stickers/rick-and-morty/sticker_2060-512x512.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      animation: rotate 4s infinite;
+      position: absolute;
+      top: 0;
+      border-radius: 50%;
+      left: 0;
+      z-index: -2;
+    }
+
+    &-button2:hover {
+      box-shadow: 2px 1px 38px 18px $normal-color;
+      transition: 0.9s ease;
+    }
+  }
+}
+.page-item{
+  list-style: none;
+  margin: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: 2px solid $second-color;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  @include centerDefault(flex,center,center)
+}
+
+.actives{
+  background-color: $second-color;
+}
+
+.page-break{
+  color: $second-color;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .page-item{
+    display: none;
+  }
+
+  .page-break{
+    display: none;
+  }
+}

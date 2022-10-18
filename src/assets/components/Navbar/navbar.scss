@@ -1,0 +1,152 @@
+@mixin hiddener($value){
+    visibility: $value;
+}
+
+@mixin quitener($value){
+    display: $value;
+}
+
+.navbarFuncionality{
+    font-size: 1.8em;
+    cursor: pointer;
+    display: grid;
+    @include quitener(none);
+    &__close{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        @include hiddener(hidden);
+    }
+
+    &__open{
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+}
+
+.navbar{
+    margin-top: 40px;
+    height: 30px;
+    width: 100%;
+    padding: 16px;
+    @include centerDefault(flex, space-between, center);
+    border-bottom: 1px solid rgba(83, 83, 83, 0.322);
+    &__left{
+        width: 150px;
+        height: 150px;
+        @include centerDefault(flex,center,center);
+        &-logo{
+            width: 80%;
+            height: 80%;
+        }
+    }
+
+    &__right{
+        &-list{
+            list-style: none;
+            @include centerDefault(flex,center,center);
+            gap: 20px;
+
+            &-item{
+                cursor: pointer;
+                font-size: 1.1rem;
+                list-style: none;
+                display: flex;
+                gap: 20px;
+                position: relative;
+            }
+
+            &-item:hover{
+                color: $second-color;
+                transition: 0.3s ease ;
+            }
+        }
+    }
+}
+
+.itemes{
+    @include hiddener(hidden);
+    @include centerDefault(flex,center,center);
+    flex-direction: column;
+    z-index: 2;
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    left:-80px;
+    top: 30px;
+    box-shadow: 14px 13px 5px -7px $normal-color;
+
+    &__act{
+        background-color: $second-color;
+        width: 100%;
+        height: 70px;
+        @include centerDefault(flex,center,center);
+    }
+
+    &__act:hover{
+        background-color: $normal-color;
+        transition: 0.6s ease;
+    }
+}
+
+.itemes.active{
+    @include hiddener(initial);
+}
+
+.button-categories{
+    gap: 10px;
+    @include centerDefault(flex,center,center);
+}
+
+//Media//
+
+@media (max-width:700px){
+    .open , .close{
+        @include quitener(initial);
+    }
+    .navbar{
+        margin-top: 0px;
+        height: 20vh;
+        padding: 60px;
+        width: 100%;
+        position: relative;
+        @include centerDefault(flex,center,center);
+        &__right{
+            transition: 0.5s ease;
+            background-color: $white-color;
+            transform: translate(-100%);
+            position: absolute;
+            z-index: 1;
+            height: 100vh;
+            width: 100%;
+            left: 0;
+            top: 0;
+            @include centerDefault(flex,center,center);
+            flex-direction: column;
+            &-list{
+                height: 100%;
+                width: 300px;
+                @include centerDefault(flex,center,center);
+                flex-direction: column;
+                gap: 60px;
+            }
+        }
+
+        &__right.active{
+            transform: translate(0%);
+            transition: 0.5s ease;
+        }
+
+    }
+
+    .navbarFuncionality{
+        @include quitener(grid);
+        z-index: 2;
+        &__open.active{
+            @include hiddener(hidden);
+        }
+
+        &__close.active{
+            @include hiddener(initial);
+        }
+    }
+}

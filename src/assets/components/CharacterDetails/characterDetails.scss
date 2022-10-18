@@ -1,0 +1,42 @@
+.characterDetails{
+    height: 80vh;
+    width: 800px;
+    @include centerDefault(flex,center,center);
+    gap: 40px;
+    border: 2px solid $second-color;
+    border-radius: 20px;
+
+    &__imgContainer{
+        &-img{
+            border: 6px solid $second-color; 
+            border-radius: 20px;
+        }
+    }
+
+    &__detailsContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+@media (max-width: $global-break){
+    .characterDetails{
+        width: 80vw;
+        height: 100vh;
+        flex-direction: column;
+        &__detailsContainer{
+            
+        }
+
+        &__imgContainer{
+            width: 260px;
+            &-img{
+                border: 6px solid $second-color; 
+                border-radius: 20px;
+                width: 100%;
+                
+            }
+        }
+    }
+}

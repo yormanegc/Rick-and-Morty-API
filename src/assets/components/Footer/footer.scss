@@ -1,0 +1,29 @@
+.footer{
+    background-color: rgb(66, 66, 66);
+    width: 100%;
+    height: 100px;
+    @include centerDefault(flex, space-between, center);
+    padding: 16px;
+    color: $white-color;
+}
+
+.sociallinks{
+    @include centerDefault(flex, center, start); 
+    flex-direction: column;
+    gap: 10px;
+    &__items{
+        text-decoration: none;
+        color: $white-color;
+    }
+
+    &__items:hover{
+        color: rgb(64, 123, 233);
+        transition: 0.3s ease;
+    }
+}
+
+@media (max-width:$global-break){
+    .footer{
+        width: 100vw;
+    }
+}

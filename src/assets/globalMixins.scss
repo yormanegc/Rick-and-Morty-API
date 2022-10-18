@@ -1,0 +1,10 @@
+@mixin centerDefault ($display, $justify, $align){
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin globalPadding{
+    padding: 16px;
+}
+
